@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ApiGeteway/bin/Debug/net8.0
+/ApiGeteway/obj
+/AuthAPI/bin/Debug/net8.0
+/AuthAPI/Migrations
+/AuthAPI/obj
