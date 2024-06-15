@@ -8,3 +8,7 @@
 /AuthAPI/Migrations
 /AuthAPI/obj
 /.vs
+/ApiGeteway/bin/Release/net8.0
+/AuthAPI/bin/Release/net8.0
+/HG.Web/bin
+/HG.Web/obj
