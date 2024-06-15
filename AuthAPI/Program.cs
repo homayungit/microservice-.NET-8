@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.AddConsole();
+builder.Logging.ClearProviders().AddConsole();
 // Add services to the container.
 builder.Services.AddDbContext<AppDbContext>(option =>
 {
@@ -40,18 +42,18 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-ApplyMigration();
+//ApplyMigration();
 app.Run();
 
-void ApplyMigration()
-{
-    using (var scope = app.Services.CreateScope())
-    {
-        var _db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+//void ApplyMigration()
+//{
+//    using (var scope = app.Services.CreateScope())
+//    {
+//        var _db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-        if (_db.Database.GetPendingMigrations().Count() > 0)
-        {
-            _db.Database.Migrate();
-        }
-    }
-}
+//        if (_db.Database.GetPendingMigrations().Count() > 0)
+//        {
+//            _db.Database.Migrate();
+//        }
+//    }
+//}
