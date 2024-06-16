@@ -2,15 +2,15 @@
   "Routes": [
     //"ProductAPI": "https://localhost:7000",
     {
-      "DownstreamPathTemplate": "/api/product",
+      "DownstreamPathTemplate": "/api/permission/GetMenue",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7000
+          "Port": 8003
         }
       ],
-      "UpstreamPathTemplate": "/api/product",
+      "UpstreamPathTemplate": "/api/permission/GetMenue",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
