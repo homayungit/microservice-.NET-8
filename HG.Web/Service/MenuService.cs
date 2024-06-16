@@ -18,7 +18,7 @@ namespace HG.Web.Service
             return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = StaticDetails.ApiType.GET,
-                Url = StaticDetails.MenuApiBase + "/api/permission/GetMenue" + userId
+                Url = StaticDetails.MenuApiBase + "/api/permission/GetMenue/" + userId
             });
         }
     }

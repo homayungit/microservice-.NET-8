@@ -11,6 +11,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
 builder.Services.AddHttpClient<IAuthService,AuthService>();
 builder.Services.AddHttpClient<IMenuService,MenuService>();
+builder.Services.AddHttpClient<ICompanyService,CompanyService>();
 
 StaticDetails.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 StaticDetails.MenuApiBase = builder.Configuration["ServiceUrls:PermissionAPI"];
@@ -20,6 +21,7 @@ builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<IMenuService, MenuService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

@@ -1,1 +1,10 @@
-﻿<h1>Get All Menu</h1>
+﻿@model IEnumerable<MenueResponseDto>
+
+<h1>Get All Menu</h1>
+
+@foreach (var item in Model)
+{
+    @item.MenuName
+}
+
+

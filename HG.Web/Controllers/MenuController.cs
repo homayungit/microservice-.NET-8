@@ -1,4 +1,5 @@
 ﻿using HG.Web.Models;
+using HG.Web.Service;
 using HG.Web.Service.IService;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -16,24 +17,19 @@ namespace HG.Web.Controllers
 
         public async Task<IActionResult> GetMenu()
         {
-            int id = 0;
-            List<MenueResponseDto>? list = new();
-            try
-            {
-               
-                ResponseDto? response = await _menuService.GetMenuByUserIdAsync(id);
-                if (response != null && response.IsSuccess)
-                {
-                    list = JsonConvert.DeserializeObject<List<MenueResponseDto>>(Convert.ToString(response.Result));
-                }
-            }
-            catch (Exception ex)
-            {
+			List<MenueResponseDto>? list = new();
 
-                throw;
-            }            
+			ResponseDto? response = await _menuService.GetMenuByUserIdAsync(null);
 
-            return View(list);
-        }
+			if (response != null && response.IsSuccess)
+			{
+				list = JsonConvert.DeserializeObject<List<MenueResponseDto>>(Convert.ToString(response.Result));
+			}
+			else
+			{
+				TempData["error"] = response?.Message;
+			}
+			return View(list);
+		}
     }
 }

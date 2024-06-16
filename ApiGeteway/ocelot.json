@@ -2,15 +2,15 @@
   "Routes": [
     //"ProductAPI": "https://localhost:7000",
     {
-      "DownstreamPathTemplate": "/api/permission/GetMenue",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/company",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 8003
+          "Host": "192.168.3.12",
+          "Port": 8004
         }
       ],
-      "UpstreamPathTemplate": "/api/permission/GetMenue",
+      "UpstreamPathTemplate": "/api/company",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
@@ -44,17 +44,17 @@
       }
     },
 
-    //"CouponAPI": "https://localhost:7001",
+    //"Permission API": "https://localhost:8003",
     {
-      "DownstreamPathTemplate": "/api/coupon",
+      "DownstreamPathTemplate": "/api/permission/GetMenue/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7001
+          "Port": 8003
         }
       ],
-      "UpstreamPathTemplate": "/api/coupon",
+      "UpstreamPathTemplate": "/api/permission/GetMenue/{id}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
