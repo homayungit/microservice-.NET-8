@@ -14,6 +14,7 @@ builder.Services.AddHttpClient<IMenuService,MenuService>();
 
 StaticDetails.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 StaticDetails.MenuApiBase = builder.Configuration["ServiceUrls:PermissionAPI"];
+StaticDetails.ConfigAPIBase = builder.Configuration["ServiceUrls:ConfigAPI"];
 
 builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
